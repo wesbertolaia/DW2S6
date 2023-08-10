@@ -28,22 +28,10 @@ public class UserResource {
 		return userRepository.findAll();
 	}
 
-	// testar Postman
-	// http://localhost:8080/users
-
 	@PostMapping
 	public User create(@RequestBody User user, HttpServletResponse response) {
 		return userRepository.save(user);
 	}
-
-	// testar Postman
-	// POST - http://localhost:8080/users
-	// Body - raw - JSON
-	/*
-	 * { "name": "Adriana Silva", "email": "adrianasilva@ifsp.edu.br", "password":
-	 * "$2a$10$Ot4XGuyPP7r82nN3WXA0bOL1Qk9gShKDlVuPoyp89HoFnHcwO4Tji", "age": 30,
-	 * "gender": "FEMININO" }
-	 */
 
 	@GetMapping("/{id}")
 	public ResponseEntity<User> findById(@PathVariable Long id) {
@@ -53,9 +41,5 @@ public class UserResource {
 		}
 		return ResponseEntity.notFound().build();
 	}
-
-	// testar Postman
-	// GET - http://localhost:8080/users/1
-	// GET - http://localhost:8080/users/10
 
 }

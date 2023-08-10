@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-IFitnessApplication<IFitness>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.edu.ifsp.arq.dw2s6.ifitness.IFitnessApplication",
+            "projectName": "IFitness",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
