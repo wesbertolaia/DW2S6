@@ -15,6 +15,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "activity")
@@ -23,13 +24,18 @@ public class Activity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private ActivityType type;
+	@NotNull
 	@Column(name = "activity_date")
 	@JsonFormat(pattern =  "dd/MM/yyyy")
 	private LocalDate date;
+	@NotNull
 	private Double distance;
+	@NotNull
 	private Integer duration;
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
